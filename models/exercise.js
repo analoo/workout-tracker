@@ -1,4 +1,3 @@
-
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
@@ -10,6 +9,7 @@ const WorkoutSchema = new Schema({
     weight: Number,
     sets: Number,
     reps: Number,
+    date: Date,
 
 });
 
