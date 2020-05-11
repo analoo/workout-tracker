@@ -1,15 +1,15 @@
-
+path = require("path")
 module.exports = function (app) {
     app.get("/", (req,res) => {
-        res.sendFile(__dirname+"/index.html")
+        res.sendFile(path.join(__dirname,"../public/html/index.html"))
     });
 
     app.get("/stats", (req,res) => {
-        res.sendFile(__dirname+"/stats.html")
+        res.sendFile(path.join(__dirname,"../public/html/stats.html"))
     })
 
     app.get("/exercise", (req,res) => {
-        res.sendFile(__dirname+"/exercise.html")
+        res.sendFile(path.join(__dirname,"../public/html/exercise.html"))
     })
 
 }

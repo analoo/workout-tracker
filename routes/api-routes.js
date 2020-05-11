@@ -7,6 +7,7 @@ module.exports = function (app) {
   // app.get("/api/workouts", (req,res) => {
   //   db.Workout.create(req.body,{})
   // }))
+
   
   // app.put("/api/workouts/:id", (res => {
   //   db.Workout.update({
