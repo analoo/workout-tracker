@@ -1,11 +1,11 @@
 var db = require("../models");
-const logger = require("morgan");
-const mongoose = require("mongoose");
+
 
 module.exports = function (app) {
 
   app.get("/api/workouts", (req, res) => {
-    db.Workout.find({},{})
+
+    db.Workout.find({}, {})
       .then(data => {
         res.json(data);
       })
@@ -15,12 +15,14 @@ module.exports = function (app) {
   });
 
 
+
+
   app.put("/api/workouts/:id", (req, res) => {
     db.Workout.findOneAndUpdate(
-      { _id: req.params.id },
-      { $push: { exercises: req.body } },
-      { new: true })
-      .then(result => {
+      { _id: req.params.id }, 
+      {$push: { exercises: req.body }} ,
+      { new: true }
+      ).then(result => {
         console.log(result)
         res.json(result)
       }).catch(err => {

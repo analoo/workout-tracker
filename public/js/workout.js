@@ -1,7 +1,6 @@
 console.log("live from workout")
 async function initWorkout() {
   const lastWorkout = await API.getLastWorkout();
-  console.log("Last workout:", lastWorkout);
   if (lastWorkout) {
     document
       .querySelector("a[href='/exercise?']")
@@ -26,8 +25,11 @@ function tallyExercises(exercises) {
       acc.totalWeight = (acc.totalWeight || 0) + curr.weight;
       acc.totalSets = (acc.totalSets || 0) + curr.sets;
       acc.totalReps = (acc.totalReps || 0) + curr.reps;
+      acc.totalDuration = (acc.totalDuration || 0) + curr.duration;
     } else if (curr.type === "cardio") {
       acc.totalDistance = (acc.totalDistance || 0) + curr.distance;
+      acc.totalDuration = (acc.totalDuration || 0) + curr.duration;
+
     }
     return acc;
   }, {});
@@ -57,6 +59,8 @@ function renderWorkoutSummary(summary) {
     totalReps: "Total Reps Performed",
     totalDistance: "Total Distance Covered"
   };
+
+  console.log(`this is summary ${JSON.stringify(summary)}`)
 
   Object.keys(summary).forEach(key => {
     const p = document.createElement("p");
