@@ -5,7 +5,7 @@ An application that allows users to view, track and create daily workouts. A use
 
 ## Site Picture
 
-![site](public/assets/csss/site_image.gif)
+![site](public/css/site_image.png)
 
 ## Table of Contents
 
