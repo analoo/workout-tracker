@@ -1,4 +1,3 @@
-console.log("live from workout")
 async function initWorkout() {
   const lastWorkout = await API.getLastWorkout();
   if (lastWorkout) {
@@ -60,7 +59,6 @@ function renderWorkoutSummary(summary) {
     totalDistance: "Total Distance Covered"
   };
 
-  console.log(`this is summary ${JSON.stringify(summary)}`)
 
   Object.keys(summary).forEach(key => {
     const p = document.createElement("p");
